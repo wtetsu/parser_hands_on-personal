@@ -10,7 +10,9 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertSame;
 
 public class MyExpressionParserTest {
-    MyExpressionParser parser = new MyExpressionParser();
+    //MyExpressionParser parser = new MyExpressionParser();
+    my.MyExpressionParser parser = new my.MyExpressionParser();
+
     @Test(expected = ParseFailure.class)
     public void confirmTestFailure1() {
         parser.parse("ab");

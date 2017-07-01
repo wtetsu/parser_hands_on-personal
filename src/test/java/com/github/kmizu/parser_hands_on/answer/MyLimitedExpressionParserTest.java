@@ -7,7 +7,9 @@ import static com.github.kmizu.parser_hands_on.limited_expression.LimitedExpress
 import static org.junit.Assert.assertEquals;
 
 public class MyLimitedExpressionParserTest {
-    MyLimitedExpressionParser parser = new MyLimitedExpressionParser();
+    //MyLimitedExpressionParser parser = new MyLimitedExpressionParser();
+    my.MyLimitedExpressionParser parser = new my.MyLimitedExpressionParser();
+
     @Test(expected = ParseFailure.class)
     public void confirmTestFailure1() {
         parser.parse("ab");

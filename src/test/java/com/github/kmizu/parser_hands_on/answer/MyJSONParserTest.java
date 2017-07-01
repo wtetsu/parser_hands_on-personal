@@ -7,7 +7,8 @@ import static com.github.kmizu.parser_hands_on.json.JSONNode.*;
 import static org.junit.Assert.assertEquals;
 
 public class MyJSONParserTest {
-    MyJSONParser parser = new MyJSONParser();
+    my.MyJSONParser parser = new my.MyJSONParser();
+    //MyJSONParser parser = new MyJSONParser();
 
     @Test
     public void emptyObjectIsParsed() {
@@ -62,6 +63,46 @@ public class MyJSONParserTest {
         assertEquals(
                 jstring(""),
                 parser.parse("\"\"")
+        );
+    }
+
+    @Test
+    public void stringIsParsed() {
+        assertEquals(
+                jstring("a"),
+                parser.parse("\"a\"")
+        );
+        assertEquals(
+                jstring("A B"),
+                parser.parse("\"A B\"")
+        );
+        assertEquals(
+                jstring("あいうえお"),
+                parser.parse("\"あいうえお\"")
+        );
+        assertEquals(
+                jstring("\r"),
+                parser.parse("\"\\r\"")
+        );
+        assertEquals(
+                jstring("\n"),
+                parser.parse("\"\\n\"")
+        );
+        assertEquals(
+                jstring("\b"),
+                parser.parse("\"\\b\"")
+        );
+        assertEquals(
+                jstring("\f"),
+                parser.parse("\"\\f\"")
+        );
+        assertEquals(
+                jstring("\\"),
+                parser.parse("\"\\\\\"")
+        );
+        assertEquals(
+                jstring("\""),
+                parser.parse("\"\\\"\"")
         );
     }
 
